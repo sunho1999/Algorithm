@@ -1,11 +1,11 @@
 import heapq
 import sys
 
-n = int(sys.stdin.readline())
+N = int(sys.stdin.readline())
 
 heap = []
 
-for i in range(n):
+for i in range(N):
     a = int(sys.stdin.readline())
     if a == 0:
         if heap:
