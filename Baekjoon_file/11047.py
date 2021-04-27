@@ -5,6 +5,7 @@ sum = 0
 for i in range(n):
     coin_list.append(int(input()))
 max = 0
+
 for i in range(n-1,-1,-1):
     if coin_list[i] > goal:
         continue
