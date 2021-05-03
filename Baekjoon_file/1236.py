@@ -1,5 +1,6 @@
 import sys
 from heapq import heappush, heappop
+
 input = sys.stdin.readline
 
 #마을의 수 , 간선수, 파티마을
