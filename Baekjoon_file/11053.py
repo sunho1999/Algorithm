@@ -7,6 +7,6 @@ for i in range(n):
     for j in range(i):
         if num_list[i] > num_list[j] and check_point[i] < check_point[j]:
             check_point[i] = check_point[j]
-    check_point[i] = check_point[i] + 1
+    check_point[i] +=1
 
 print(max(check_point))
