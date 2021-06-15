@@ -17,7 +17,7 @@ while q:
         bbb+=1
         print(way)
         print(bbb)
-        break
+
     else:
         if visited[cnt-1] == 0 and 0 <= cnt <= 100001:
             visited[cnt-1] = visited[cnt] +1
