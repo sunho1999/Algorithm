@@ -2,6 +2,7 @@ import heapq
 import sys
 
 inf = 987654321
+sys.setrecursionlimit(10000)
 
 def dijkstar(start,end,matrix):
     que = []
@@ -28,7 +29,7 @@ matrix = [[] for i in range(n+1)]
 
 for i in range(m):
     a, b, c = map(int,sys.stdin.readline().split())
-    matrix[a].append((b,c))
+    matrix[a].append([b,c])
 
 #시작 노드 , 도착 노드
 start,end = map(int,input().split())
