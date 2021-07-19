@@ -1,31 +1,23 @@
-import sys
 from collections import deque
-a, b = map(int,sys.stdin.readline().split())
-visited = [0]*100001
-#방문기록 숫자 증가
-cnt = 0
-#bfs하기위한 큐 생성
-q = deque([[a,cnt]])
 
-print(q)
+N, K = map(int, input().split())
+MAX_SIZE = 100001
+
+q = deque()
+q.append(N)
+
+cnt=0
+check=[-1]* MAX_SIZE
+check[N]=0
 while q:
-    node = q.popleft()
-    cnt = node[0]
-    way = node[1]
-    bbb = 0
-    if cnt == b:
-        bbb+=1
-        print(way)
-        print(bbb)
+    x = q.popleft()
+    if x==K:
+        cnt+=1
+    for y in [x * 2, x + 1, x - 1]:
+        if 0 <= y < MAX_SIZE:
+            if check[y]==-1 or check[y]>=check[x]+1: #시간: 방문한 적 없거나 현재시간 +1인경우
+                check[y]=check[x]+1
+                q.append(y)
 
-    else:
-        if visited[cnt-1] == 0 and 0 <= cnt <= 100001:
-            visited[cnt-1] = visited[cnt] +1
-            q.append([cnt-1,way+1])
-
-        if visited[cnt+1] == 0 and 0 <= cnt <= 100001:
-            visited[cnt+1] = visited[cnt] +1
-            q.append([cnt+1,way+1])
-        if visited[cnt*2] == 0 and 0 <= cnt <= 100001:
-            visited[cnt*2] = visited[cnt] +1
-            q.append([cnt*2,way+1])
+print(check[K])
+print(cnt)
