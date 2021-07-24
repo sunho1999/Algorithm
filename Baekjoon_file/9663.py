@@ -5,6 +5,7 @@ def adjacent(x):
             return False
     return True
 
+
 # 한줄씩 재귀하며 DFS를 실행
 def dfs(x):
     global result

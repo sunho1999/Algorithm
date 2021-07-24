@@ -12,3 +12,4 @@ for i in range(1,n):
     else:
         dp[i] = a[i] + max(s)
 print(max(dp))
+
