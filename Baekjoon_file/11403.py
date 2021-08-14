@@ -14,7 +14,6 @@ def dfs(i):
 for i in range(n):
     dfs(i)
 
-
 for i in matrix:
     for j in i:
         print(j,end = " ")
