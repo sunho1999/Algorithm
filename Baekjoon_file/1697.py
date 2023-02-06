@@ -1,28 +1,26 @@
-import sys
 from collections import deque
 
+start_point, end_point = map(int,input().split())
 
-def bfs(V):
-    q = deque()
-    q.append(V)
-    while q:
-        a = q.popleft()
-        if a == K:
-            print(dust[a])
-            break
-        if 0<= a-1 <= max and dust[a-1] ==0:
-            dust[a-1] = dust[a]+1
-            q.append(a-1)
-        if 0 <= a + 1 <= max and dust[a + 1] == 0:
-            dust[a + 1] = dust[a] + 1
-            q.append(a + 1)
-        if 0 <= a * 2 <= max and dust[a * 2] == 0:
-            dust[a * 2] = dust[a] + 1
-            q.append(a * 2)
+visited = [0 for i in range(100002)]
 
+que = deque()
+que.append(start_point)
 
-N, K = map(int,sys.stdin.readline().split())
-max = 100000+1
-dust = [0]*(max+1)
-bfs(N)
+while que:
+    x = que.popleft()
 
+    if x == end_point:
+        print(visited[x])
+        break
+    if x-1 >=0 and x-1 <= 100001 and visited[x-1] == 0:
+        visited[x-1] = visited[x]+1
+        que.append(x-1)
+    if x +1 >= 0 and x+1 <= 100001 and visited[x+1] == 0:
+        visited[x+1] = visited[x]+1
+        que.append(x+1)
+    if x*2 >=0 and x*2 <= 100001 and visited[x*2] == 0:
+        visited[x*2] = visited[x]+1
+        que.append(x*2)
+
+# 100 98일때 안됨.
