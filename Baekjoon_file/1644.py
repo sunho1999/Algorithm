@@ -1,6 +1,5 @@
 n = int(input())
 
-
 a = [False,False] + [True]*(n-1)
 primes=[]
 
