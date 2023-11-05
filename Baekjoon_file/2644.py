@@ -1,4 +1,5 @@
 from collections import deque
+
 n = int(input())
 first_num , second_num = map(int,input().split())
 if first_num > second_num:
