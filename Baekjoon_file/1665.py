@@ -1,6 +1,6 @@
 import heapq
 import sys
-# input = sys.stdin.readline
+input = sys.stdin.readline
 
 N = int(input())
 nums = [int(input()) for _ in range(N)]
@@ -11,7 +11,7 @@ for n in nums:
         heapq.heappush(left_q, (-n, n))
     else:
         heapq.heappush(right_q, (n, n))
-    print(left_q," ",right_q)
+    # print(left_q," ",right_q)
     if right_q and left_q[0][1] > right_q[0][1]:
         a, b = heapq.heappop(left_q)[1], heapq.heappop(right_q)[1]
         heapq.heappush(left_q, (-b, b))
